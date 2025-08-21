@@ -1,11 +1,22 @@
-<ItemGroup>
-  <Reference Include="StardewModdingAPI">
-    <HintPath>lib\StardewModdingAPI.dll</HintPath>
-  </Reference>
-  <Reference Include="StardewValley">
-    <HintPath>lib\StardewValley.dll</HintPath>
-  </Reference>
-  <Reference Include="0Harmony">
-    <HintPath>lib\0Harmony.dll</HintPath>
-  </Reference>
-</ItemGroup>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>LongerHugsAndKisses</AssemblyName>
+    <RootNamespace>LongerHugsAndKisses</RootNamespace>
+    <Platforms>x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Références Stardew Valley -->
+    <Reference Include="StardewModdingAPI">
+      <HintPath>$(GamePath)\StardewModdingAPI.exe</HintPath>
+    </Reference>
+    <Reference Include="Stardew Valley">
+      <HintPath>$(GamePath)\Stardew Valley.exe</HintPath>
+    </Reference>
+    <Reference Include="HarmonyLib">
+      <HintPath>$(GamePath)\Mods\Harmony\0Harmony.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
+
