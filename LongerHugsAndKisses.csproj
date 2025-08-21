@@ -1,18 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <AssemblyName>LongerHugsAndKisses</AssemblyName>
-    <RootNamespace>LongerHugsAndKisses</RootNamespace>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="StardewModdingAPI">
-      <HintPath>../StardewModdingAPI.dll</HintPath>
-    </Reference>
-    <Reference Include="Stardew Valley">
-      <HintPath>../Stardew Valley.dll</HintPath>
-    </Reference>
-    <Reference Include="HarmonyLib">
-      <HintPath>../0Harmony.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-</Project>
+<ItemGroup>
+  <Reference Include="StardewModdingAPI">
+    <HintPath>lib\StardewModdingAPI.dll</HintPath>
+  </Reference>
+  <Reference Include="StardewValley">
+    <HintPath>lib\StardewValley.dll</HintPath>
+  </Reference>
+  <Reference Include="0Harmony">
+    <HintPath>lib\0Harmony.dll</HintPath>
+  </Reference>
+</ItemGroup>
