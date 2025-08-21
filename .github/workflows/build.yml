@@ -4,7 +4,6 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
@@ -16,17 +15,28 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: 5.0.x
 
-    - name: Restore dependencies
+    - name: Restore
       run: dotnet restore
 
     - name: Build
       run: dotnet build --configuration Release --no-restore
 
+    - name: Pack (zip prêt à mettre dans Mods)
+      shell: pwsh
+      run: |
+        $out = "package"
+        New-Item -ItemType Directory -Force -Path $out | Out-Null
+        Copy-Item manifest.json $out/
+        # récupère automatiquement la DLL compilée dans net5.0
+        $dll = Get-ChildItem -Recurse -Filter *.dll | Where-Object { $_.FullName -match "bin\\Release\\net5.0" }
+        Copy-Item $dll.FullName $out/
+        Compress-Archive -Path "$out/*" -DestinationPath "LongerHugsAndKisses.zip" -Force
+
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: ModDLL
-        path: bin/Release/
+        name: LongerHugsAndKisses
+        path: LongerHugsAndKisses.zip
         
