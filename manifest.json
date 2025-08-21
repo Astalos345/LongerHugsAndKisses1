@@ -1,0 +1,9 @@
+{
+  "Name": "Longer Hugs And Kisses",
+  "Author": "Custom",
+  "Version": "1.0.0",
+  "Description": "Prolonge la durée des câlins et des baisers.",
+  "UniqueID": "Custom.LongerHugsAndKisses",
+  "EntryDll": "LongerHugsAndKisses.dll",
+  "MinimumApiVersion": "3.0.0"
+}
